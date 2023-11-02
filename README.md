@@ -1,5 +1,7 @@
 # REACT-NOTES
 
+## Setup and Installation of app Vite+React
+
 ```
 1. go to https://tailwindcss.com/docs/guides/vite
 2. create one project
@@ -12,3 +14,16 @@
 6. run and use.
 npm run dev
 ```
+## Todo Operation
+
+### Create:
+```
+ const [tasks, setTasks] = useState([]);
+    const addTask = title => {
+        const newTasks = [...tasks, { title, completed: false }];
+        setTasks(newTasks);
+    };
+```
+### Read
+
+ 
