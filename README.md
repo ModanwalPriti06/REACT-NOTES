@@ -32,6 +32,13 @@ npm run dev
     setArray(updatedTasks);
   };
 ```
+```
+const handleDelete = (index) => {
+  const updatedTasks = array.filter((_, i) => i !== index);
+  setArray(updatedTasks);
+};
+```
+
 ### Update
 ```
 ```
