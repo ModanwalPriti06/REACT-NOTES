@@ -24,6 +24,14 @@ npm run dev
         setTasks(newTasks);
     };
 ```
-### Read
+### Delete
+```
+ const handleDelete = (index) => {
+    const updatedTasks = [...array];
+    updatedTasks.splice(index, 1);
+    setArray(updatedTasks);
+  };
+
+```
 
  
