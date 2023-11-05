@@ -31,7 +31,9 @@ npm run dev
     updatedTasks.splice(index, 1);
     setArray(updatedTasks);
   };
-
+```
+### Update
+```
 ```
 
  
