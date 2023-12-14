@@ -42,5 +42,25 @@ const handleDelete = (index) => {
 ### Update
 ```
 ```
+### Read
+```
+```
+
+# React-Router
+
+- app.jsx add your router path whatever you have to route.
+  ```
+  import { RouterProvider, createBrowserRouter, Route , createRoutesFromElements} from 'react-router-dom'
+
+  const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path='/' element={<Navbar/>}>
+      <Route path='/home' element={<HomePage/>}/>
+     ....
+    </Route > 
+  )
+)
+  ```
+- 
 
  
