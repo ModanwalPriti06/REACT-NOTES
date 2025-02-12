@@ -15,7 +15,6 @@
 npm run dev
 ```
 ## Todo Operation
-
 ### Create:
 ```
  const [tasks, setTasks] = useState([]);
@@ -39,28 +38,9 @@ const handleDelete = (index) => {
 };
 ```
 
-### Update
-```
-```
-### Read
-```
-```
+Interview Question
 
-# React-Router
-
-- app.jsx add your router path whatever you have to route.
-  ```
-  import { RouterProvider, createBrowserRouter, Route , createRoutesFromElements} from 'react-router-dom'
-
-  const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path='/' element={<Navbar/>}>
-      <Route path='/home' element={<HomePage/>}/>
-     ....
-    </Route > 
-  )
-)
-  ```
-- 
+| Sl no. | Question |
+| ------- | --------| 
 
  
