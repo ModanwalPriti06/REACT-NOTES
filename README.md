@@ -38,9 +38,11 @@ const handleDelete = (index) => {
 };
 ```
 
-Interview Question
+# Interview Question
 
-| Sl no. | Question |
+| **Sl no.** | **Question** |
 | ------- | --------| 
+| 1 |  differences between controlled and uncontrolled components in React, and when would you prefer one over the other |
+| 2 | 
 
  
