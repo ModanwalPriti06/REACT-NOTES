@@ -48,7 +48,8 @@ const handleDelete = (index) => {
 | 4 | What is React reconciliation, and how does the virtual DOM work? | 
 | 5 | What are Higher-Order Components (HOC) in React? Can you give an example of how they are used? |
 | 6 | What is the difference between Context API and Redux for state management? When should you use each? |
-| 7 | 
+| 7 | What are the different lifecycle methods in React class components, and how do they map to React hooks in functional components? |
+| 8 |
 ---
 ### 1. Controlled Components:
 - In controlled components, form elements (like input, textarea, select) are bound to the component’s state. The React component controls the value of the form element.
@@ -95,6 +96,14 @@ const handleDelete = (index) => {
 | Boilerplate Code	 | Minimal	| More setup required (reducers, actions, store) | 
 | Asynchronous Handling | 	No built-in solution (needs useReducer or external libraries like useAsync)	| Uses redux-thunk or redux-saga for handling async operations | 
 | Ease of Use |	Simple and built into React |	More complex but powerful for large-scale applications |
+
+ ### 7
+- componentDidMount() → useEffect() (with an empty dependency array [])
+- componentDidUpdate() → useEffect() (with dependencies)
+- componentWillUnmount() → Cleanup function inside useEffect()
+- shouldComponentUpdate() → Optimizing re-renders (handled by React) with React.memo() or useMemo() for memoization
+
+
 --- 
 # React Notes Start
 
