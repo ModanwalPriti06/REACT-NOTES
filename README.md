@@ -106,6 +106,122 @@ const handleDelete = (index) => {
 
 --- 
 # React Notes Start
+## What is React?
+- React is a JavaScript library for building user interfaces. It is component-based, meaning that UI elements are broken down into reusable components. React follows a declarative approach, allowing developers to efficiently update and render the UI based on state changes.
+
+### Key Features:
+- Component-Based – UI is built using reusable components.
+- Virtual DOM – Improves performance by updating only changed elements.
+- State Management – Uses hooks like useState, useReducer for handling state.
+- Unidirectional Data Flow – Data flows in one direction for easier debugging.
+- Hooks – Allows functional components to manage state and lifecycle.
+
+# Hooks:
+
+## useState (Manages Component State)
+- Manages state in functional components.
+- Manages local state
+- Used to declare state variables in functional components.
+
+## useEffect (Handles Side Effects)
+- Handles side effects like API calls, event listeners, or subscriptions.
+```
+  useEffect(() => {
+    //....
+  }, []); // Empty dependency array → runs once on mount
+```
+## useContext (Global State Management)
+- Allows sharing data across components without props drilling.
+```
+import { createContext, useContext } from "react";
+const ThemeContext = createContext("light");
+
+function ThemeComponent() {
+  const theme = useContext(ThemeContext);
+  return <p>Current Theme: {theme}</p>;
+}
+export default function App() {
+  return (
+    <ThemeContext.Provider value="dark">
+      <ThemeComponent />
+    </ThemeContext.Provider>
+  );
+}
+```
+## useRef: (Accessing DOM & Persisting Values)
+- Used for accessing DOM elements and persisting values without causing re-renders.
+```
+import { useRef, useEffect } from "react";
+
+function InputFocus() {
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
+  return <input ref={inputRef} placeholder="Type here..." />;
+}
+```
+## useReducer: (For Complex State Logic)
+- An alternative to useState for complex state logic.
+```
+import { useReducer } from "react";
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "increment":
+      return { count: state.count + 1 };
+    case "decrement":
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+};
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, { count: 0 });
+
+  return (
+    <div>
+      <p>Count: {state.count}</p>
+      <button onClick={() => dispatch({ type: "increment" })}>+</button>
+      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+    </div>
+  );
+}
+```
+## useMemo: (Performance Optimization)
+- Optimizes performance by memoizing computed values.
+```
+import { useState, useMemo } from "react";
+
+function ExpensiveCalculation({ number }) {
+  const computedValue = useMemo(() => {
+    console.log("Computing...");
+    return number * 2;
+  }, [number]);
+
+  return <p>Computed Value: {computedValue}</p>;
+}  
+```
+## useCallback: (Optimizing Function References)
+- Memoizes functions to prevent unnecessary re-renders.
+
+## useLayoutEffect: (Runs Before Paint)
+- Similar to useEffect but runs synchronously after DOM mutations.
+
+## useImperativeHandle: (Customizing ref Exposed Values)
+- Customizes the instance value exposed when using ref.
+
+
+
+
+
+
+
+
+
 
 
 
