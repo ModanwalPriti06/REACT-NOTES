@@ -122,11 +122,17 @@ const handleDelete = (index) => {
 - Manages state in functional components.
 - Manages local state
 - Used to declare state variables in functional components.
+  ```
+  setCount(prev => prev+1) // keep mind
+  ```
 
 ## useEffect (Handles Side Effects)
 - Handles side effects like API calls, event listeners, or subscriptions.
 ```
   useEffect(() => {
+    window.addEventListner(resize, ()=>{
+     setWindow(window.innerWidth)
+    }
     //....
   }, []); // Empty dependency array → runs once on mount
 ```
@@ -214,6 +220,16 @@ function ExpensiveCalculation({ number }) {
 ## useImperativeHandle: (Customizing ref Exposed Values)
 - Customizes the instance value exposed when using ref.
 
+## State and Props
+**State** 
+- Stateis a mutable (changeable) object that stores data inside a component.
+- A component owns and controls its state.
+- When the state updates, the component re-renders automatically.
+**props (peoperty)**
+- props is like argument pass in a function, props you pass into the component and state is inside a component.
+- Props are immutable and passed from a parent component to a child component.
+- The child cannot modify props; they are read-only.
+- Used for data sharing between components.
 
 
 
