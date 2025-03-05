@@ -128,6 +128,13 @@ const handleDelete = (index) => {
 - Unidirectional Data Flow – Data flows in one direction for easier debugging.
 - Hooks – Allows functional components to manage state and lifecycle.
 
+### The important features of React are:
+
+- It supports server-side rendering.
+- It will make use of the virtual DOM rather than real DOM (Data Object Model) as RealDOM manipulations are expensive.
+- It follows unidirectional data binding or data flow.
+- It uses reusable or composable UI components for developing the view.
+
 # Hooks:
 
 ## useState (Manages Component State)
@@ -160,7 +167,7 @@ function ThemeComponent() {
 }
 export default function App() {
   return (
-    <ThemeContext.Provider value="dark">
+    <ThemeContext.Provider value={dark}>
       <ThemeComponent />
     </ThemeContext.Provider>
   );
