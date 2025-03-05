@@ -200,16 +200,28 @@ function Counter() {
 ## useMemo: (Performance Optimization)
 - Optimizes performance by memoizing computed values.
 ```
-import { useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 
-function ExpensiveCalculation({ number }) {
-  const computedValue = useMemo(() => {
-    console.log("Computing...");
-    return number * 2;
-  }, [number]);
+const MemoExample = () => {
+  const [numbers, setNumbers] = useState([1, 2, 3, 4, 5]);
+  const [count, setCount] = useState(0);
 
-  return <p>Computed Value: {computedValue}</p>;
-}  
+  // Memoizing the sum of numbers
+  const sum = useMemo(() => {
+    console.log("Calculating sum...");
+    return numbers.reduce((acc, num) => acc + num, 0);
+  }, [numbers]); // Runs only when `numbers` change
+
+  return (
+    <div>
+      <h2>Sum: {sum}</h2>
+      <button onClick={() => setCount(count + 1)}>Re-render ({count})</button>
+      <button onClick={() => setNumbers([...numbers, Math.floor(Math.random() * 10)])}>
+        Add Random Number
+      </button>
+    </div>
+  );
+};
 ```
 ## useCallback: (Optimizing Function References)
 - Memoizes functions to prevent unnecessary re-renders.
