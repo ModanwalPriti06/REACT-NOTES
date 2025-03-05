@@ -168,17 +168,33 @@ export default function App() {
 ```
 ## useRef: (Accessing DOM & Persisting Values)
 - Used for accessing DOM elements and persisting values without causing re-renders.
+- Big usecases - used to refrence element inside the html.
+- useRef can store previous values of a state without triggering re-renders. 
 ```
-import { useRef, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import "./styles.css";
 
-function InputFocus() {
-  const inputRef = useRef(null);
+export default function App() {
+  const [name, setName] = useState("");
+  const inputRef = useRef(0);
 
-  useEffect(() => {
+  const focus = () => {
     inputRef.current.focus();
-  }, []);
+    inputRef.current.input = 'Some Value'
+  };
 
-  return <input ref={inputRef} placeholder="Type here..." />;
+  return (
+    <div className="App">
+      <input
+        ref={inputRef}
+        type="text"
+        onChange={(e) => setName(e.target.value)}
+      />
+      <h2>My name is {name}</h2>
+      <button onClick={focus}>Focus</button>
+    </div>
+  );
+}
 }
 ```
 ## useReducer: (For Complex State Logic)
@@ -208,6 +224,22 @@ function Counter() {
     </div>
   );
 }
+```
+```
+ const [name, setName] = useState("");
+  const prevName = useRef("");
+
+  useEffect(() => {
+    prevName.current = name;
+  }, [name]);
+
+  return (
+    <div className="App">
+      <input type="text" onChange={(e) => setName(e.target.value)} />
+      <h2>
+        My name is {name} and prevName name is: {prevName.current}
+      </h2>
+    </div>
 ```
 ## useMemo: (Performance Optimization)
 - Optimizes performance by memoizing computed values.
