@@ -4,6 +4,7 @@
 | 1 |  Setup and Installation of Vite+React |
 | 2 | Interview Question | 
 | 3 | Hooks - useState, useEffect, useMemo, useContext, useRef, useReducer, useCallback, uselayoutEffect, useImperativeHandle  | 
+| 3.1 | Custom Hook | 
 | 4 | state and props | 
 | 5 | What is JSX|
 | 6 | Difference Between Class Component and Functional Component in React 🚀 |
@@ -12,7 +13,7 @@
 | 9 | props drilling |
 | 10 | virtual DOM |
 | 11 | Reconciliation|
-| 12 | |
+| 12 | Life Cycle Method |
 | 13 | |
 | 14 | |
 | 15 | |
