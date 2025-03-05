@@ -338,7 +338,6 @@ React provides two ways to create components:
  - Uses Lifecycle Methods (componentDidMount, componentDidUpdate, etc.).
  - More boilerplate code.
  - A class component must include the 'extend React.Component' statement. (create an Inheritance in react)
- - 
 
 ### Functional Component (Modern Approach)
 - Uses JavaScript functions.
@@ -357,7 +356,8 @@ React provides two ways to create components:
 - UseContext use to stop props drilling.
 
 ## WHat is Reconciliation? 
-- 
+- Reconciliation is the process React uses to efficiently update the DOM when a component's state or props change. Instead of re-rendering the entire UI, React compares the new Virtual DOM with the previous Virtual DOM and applies only the necessary changes to the actual DOM.
+- This makes updates faster, efficient, and smooth!
   
 
 
