@@ -5,13 +5,20 @@
 | 2 | Interview Question | 
 | 3 | Hooks - useState, useEffect, useMemo, useContext, useRef, useReducer, useCallback, uselayoutEffect, useImperativeHandle  | 
 | 4 | state and props | 
-| 5 | |
-| 6 | |
-| 7 | |
-| 8 | |
-| 9 | |
-| 10 | |
-| 11 | |
+| 5 | What is JSX|
+| 6 | Difference Between Class Component and Functional Component in React 🚀 |
+| 7 | What is the virtual DOM? How does react use the virtual DOM to render the UI? |
+| 8 | What are the differences between controlled and uncontrolled components?|
+| 9 | props drilling |
+| 10 | virtual DOM |
+| 11 | Reconciliation|
+| 12 | |
+| 13 | |
+| 14 | |
+| 15 | |
+| 16 | |
+| 17 | |
+
 
 ## Setup and Installation of app Vite+React
 
@@ -55,7 +62,7 @@ const handleDelete = (index) => {
 
 | **Sl no.** | **Question** |
 | ------- | --------| 
-| 1 |  differences between controlled and uncontrolled components in React, and when would you prefer one over the other |
+| 1 | Differences between controlled and uncontrolled components in React, and when would you prefer one over the other |
 | 2 | "What are React Hooks, and why were they introduced? | 
 | 3 | What is the difference between useEffect and useLayoutEffect in React? | 
 | 4 | What is React reconciliation, and how does the virtual DOM work? | 
@@ -67,10 +74,19 @@ const handleDelete = (index) => {
 - In controlled components, form elements (like input, textarea, select) are bound to the component’s state. The React component controls the value of the form element.
 - The state is updated based on user input through event handlers.
 - It gives you more control over the form data because React is managing the state of the inputs.
-### 1.2 Uncontrolled Components:
+- The component is under control of the component state.
+- Internal state is not maintained
+- It accept the current value as a props.
+- controlled by the parent component.
+
+### 2. Uncontrolled Components:
 - In uncontrolled components, form elements manage their own state internally, and you interact with them through refs (short for references).
 - React does not directly control the value of the input, and it relies on the DOM to manage the state.
 - It is often used when you need to interact with the DOM directly or when you don’t need to track the input value in the React component.
+- Component is under control of the DOM.
+- Internal state is maintain.
+- We access the value using ref.
+- controlled by the DOM itself.
 
 ### 3.1 useEffect (Runs asynchronously after render)
 - Executes after the browser paints the screen.
@@ -120,6 +136,7 @@ const handleDelete = (index) => {
 # React Notes Start
 ## What is React?
 - React is a JavaScript library for building user interfaces. It is component-based, meaning that UI elements are broken down into reusable components. React follows a declarative approach, allowing developers to efficiently update and render the UI based on state changes.
+- React is unidirection data flow ( means jo top level component hota hai uske down level component ko data transfer kr skte hai).
 
 ### Key Features:
 - Component-Based – UI is built using reusable components.
@@ -136,6 +153,11 @@ const handleDelete = (index) => {
 - It uses reusable or composable UI components for developing the view.
 
 # Hooks:
+
+## What are the rules that must be followed while using React Hooks?
+- There are 2 rules which must be followed while you code with Hooks:
+1. React Hooks must be called only at the top level. It is not allowed to call them inside the nested functions, loops, or conditions.
+2. It is allowed to call the Hooks only from the React Function Components.
 
 ## useState (Manages Component State)
 - Manages state in functional components.
@@ -283,6 +305,9 @@ const MemoExample = () => {
 ## useImperativeHandle: (Customizing ref Exposed Values)
 - Customizes the instance value exposed when using ref.
 
+## What are Custom Hooks?
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ## State and Props
 **State** 
 - Stateis a mutable (changeable) object that stores data inside a component.
@@ -293,6 +318,48 @@ const MemoExample = () => {
 - Props are immutable and passed from a parent component to a child component.
 - The child cannot modify props; they are read-only.
 - Used for data sharing between components.
+
+## What is JSX?
+- JSX stands for JavaScript XML. It allows us to write HTML inside JavaScript and place them in the DOM without using functions like appendChild( ) or createElement( ).
+  
+## What is component?
+- Component are independent and reusable bits of code.
+- Component are function that return HTML element JSX.
+
+## Difference Between Class Component and Functional Component in React 🚀
+React provides two ways to create components:
+1. Class Components (Old Approach)
+2. Functional Components (Modern Approach)
+
+ ### Class Component (Before React 16.8)
+ - Uses ES6 class syntax.
+ - Requires render() method.
+ - Uses this.state for managing state.
+ - Uses Lifecycle Methods (componentDidMount, componentDidUpdate, etc.).
+ - More boilerplate code.
+ - A class component must include the 'extend React.Component' statement. (create an Inheritance in react)
+ - 
+
+### Functional Component (Modern Approach)
+- Uses JavaScript functions.
+- No this keyword required.
+- Uses useState, useEffect, and other React Hooks.
+- Shorter and cleaner code.
+- Easier to read, test, and optimize.
+
+## What is the virtual DOM? How does react use the virtual DOM to render the UI?
+- Virtual DOM is nothing but it is the virtual representation of the real DOM (Document Object Modal) so basically whenever the state of out application get update the virtual DOM get update instead of the real DOM.
+- DOM manipulation is an integral part of any web application, but DOM manipulation is quite slow when compared to other operations in JavaScript. The efficiency of the application gets affected when several DOM manipulations are being done. Most JavaScript frameworks update the entire DOM even when a small part of the DOM changes.
+
+##  What is prop drilling in React?
+- Props Drilling refers to the process of passing data (props) from a parent component to a deeply nested child component, even if some intermediate components don’t need it.
+- It can make the code harder to maintain and less scalable as the app grows.
+- UseContext use to stop props drilling.
+
+## WHat is Reconciliation? 
+- 
+  
+
 
 
 
