@@ -1,4 +1,17 @@
-# REACT-NOTES
+# REACT-NOTES Topic Cover
+| **Sl no.** | **Topic** |
+| ------- | --------| 
+| 1 |  Setup and Installation of Vite+React |
+| 2 | Interview Question | 
+| 3 | Hooks - useState, useEffect, useMemo, useContext, useRef, useReducer, useCallback, uselayoutEffect, useImperativeHandle  | 
+| 4 | state and props | 
+| 5 | |
+| 6 | |
+| 7 | |
+| 8 | |
+| 9 | |
+| 10 | |
+| 11 | |
 
 ## Setup and Installation of app Vite+React
 
@@ -49,7 +62,6 @@ const handleDelete = (index) => {
 | 5 | What are Higher-Order Components (HOC) in React? Can you give an example of how they are used? |
 | 6 | What is the difference between Context API and Redux for state management? When should you use each? |
 | 7 | What are the different lifecycle methods in React class components, and how do they map to React hooks in functional components? |
-| 8 |
 ---
 ### 1. Controlled Components:
 - In controlled components, form elements (like input, textarea, select) are bound to the component’s state. The React component controls the value of the form element.
