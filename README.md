@@ -13,11 +13,11 @@
 | 9 | props drilling |
 | 10 | virtual DOM |
 | 11 | Reconciliation|
-| 12 | Life Cycle Method |
-| 13 | Statefull and Stateless component |
-| 14 | |
-| 15 | |
-| 16 | |
+| -12 | Life Cycle Method |
+| -13 | Statefull and Stateless component |
+| -14 | React Router|
+| -15 | Redux |
+| -16 | Error Boundries |
 | 17 | |
 
 
