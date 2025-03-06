@@ -14,7 +14,7 @@
 | 10 | virtual DOM |
 | 11 | Reconciliation|
 | 12 | Life Cycle Method |
-| 13 | |
+| 13 | Statefull and Stateless component |
 | 14 | |
 | 15 | |
 | 16 | |
@@ -131,7 +131,6 @@ const handleDelete = (index) => {
 - componentDidUpdate() → useEffect() (with dependencies)
 - componentWillUnmount() → Cleanup function inside useEffect()
 - shouldComponentUpdate() → Optimizing re-renders (handled by React) with React.memo() or useMemo() for memoization
-
 
 --- 
 # React Notes Start
@@ -406,6 +405,16 @@ React provides two ways to create components:
 ## WHat is Reconciliation? 
 - Reconciliation is the process React uses to efficiently update the DOM when a component's state or props change. Instead of re-rendering the entire UI, React compares the new Virtual DOM with the previous Virtual DOM and applies only the necessary changes to the actual DOM.
 - This makes updates faster, efficient, and smooth!
+
+## What is Webpack.
+- Webpack is a module bundler for JavaScript applications. It takes multiple files (JavaScript, CSS, images, etc.), processes them, and bundles them into a single (or multiple) optimized file(s) for better performance.
+- Like crate react app, webpack is also a commond line tool used to create a bundle of assets (files and code).
+- It doesn't run on the browser or on the server.
+- It take all the js file and other assets file, transforming them into one large file. Now this compressed file can be sent to the browser or the server depending on which rendering style you have set up for your website.
+- All different2 extension file convert into one single file.
+
+
+
   
 
 
