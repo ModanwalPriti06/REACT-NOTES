@@ -71,7 +71,7 @@ const handleDelete = (index) => {
 | 6 | What is the difference between Context API and Redux for state management? When should you use each? |
 | 7 | What are the different lifecycle methods in React class components, and how do they map to React hooks in functional components? |
 ---
-### 1. Controlled Components:
+## 1. Controlled Components:
 - In controlled components, form elements (like input, textarea, select) are bound to the component’s state. The React component controls the value of the form element.
 - The state is updated based on user input through event handlers.
 - It gives you more control over the form data because React is managing the state of the inputs.
@@ -80,7 +80,7 @@ const handleDelete = (index) => {
 - It accept the current value as a props.
 - controlled by the parent component.
 
-### 2. Uncontrolled Components:
+## 2. Uncontrolled Components:
 - In uncontrolled components, form elements manage their own state internally, and you interact with them through refs (short for references).
 - React does not directly control the value of the input, and it relies on the DOM to manage the state.
 - It is often used when you need to interact with the DOM directly or when you don’t need to track the input value in the React component.
@@ -89,17 +89,17 @@ const handleDelete = (index) => {
 - We access the value using ref.
 - controlled by the DOM itself.
 
-### 3.1 useEffect (Runs asynchronously after render)
+## 3.1 useEffect (Runs asynchronously after render)
 - Executes after the browser paints the screen.
 - Used for data fetching, subscriptions, or updating the DOM without blocking rendering.
 - Does not block the UI, making it good for most use cases.
 
-### 3.2 useLayoutEffect (Runs synchronously before the browser paints)
+## 3.2 useLayoutEffect (Runs synchronously before the browser paints)
 - Executes before the browser updates the screen.
 - Used when you need to measure DOM elements or make layout adjustments before the user sees the change.
 - Can block rendering, so use it carefully.
 
-### 4 Virtual DOM (VDOM)
+## 4 Virtual DOM (VDOM)
 - React maintains a lightweight copy of the real DOM called the Virtual DOM.
 - Instead of updating the actual DOM directly (which is slow), React updates the Virtual DOM first.
 ### Reconciliation (Efficiently updating the UI)
@@ -107,7 +107,7 @@ const handleDelete = (index) => {
 - It compares (diffs) the new Virtual DOM with the previous one.
 - Only the changed elements are updated in the real DOM (not the whole page).
 
-### 5 A Higher-Order Component (HOC):
+## 5 A Higher-Order Component (HOC):
 - It is a function that takes a component as input and returns a new enhanced component. It is used for code reusability, logic sharing, and enhancing components without modifying their original structure.
 ### Why use HOCs?
 - To reuse logic across multiple components
@@ -413,9 +413,13 @@ React provides two ways to create components:
 - It take all the js file and other assets file, transforming them into one large file. Now this compressed file can be sent to the browser or the server depending on which rendering style you have set up for your website.
 - All different2 extension file convert into one single file.
 
+## Name a few techniques to optimize React app performance.
+- Using useMemo( ): t is a React hook that is used for caching CPU-Expensive functions.
+- Using React.PureComponent: It is a base component class that checks the state and props of a component to know whether the component should be updated.
+- Lazy Loading :  It is a technique used to reduce the load time of a React app. Lazy loading helps reduce the risk of web app performances to a minimum.
 
 
-  
+
 
 
 
