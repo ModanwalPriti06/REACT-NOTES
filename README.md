@@ -19,6 +19,8 @@
 | -15 | Redux |
 | -16 | Error Boundries |
 | -17 | Strict Mode in React. |
+| -18 | Lifting State |
+| -19 | React Fragmentation |
 ```
 
 Handle submit = e.preventDefault();
