@@ -20,7 +20,6 @@
 | -16 | Error Boundries |
 | -17 | Strict Mode in React. |
 
-
 **Handle submit = e.preventDefault();**
 
 ## Setup and Installation of app Vite+React
