@@ -332,7 +332,48 @@ const MemoExample = () => {
 ```
 ## useCallback: (Optimizing Function References)
 - Memoizes functions to prevent unnecessary re-renders.
-- 
+  ```
+  import { useState, useCallback } from "react";
+  import "./styles.css";
+  
+  export default function App() {
+    const [number, setNumber] = useState(0);
+  
+    // Memoized function to return array of numbers this will be render not again and again only when number update it will be update number value.
+    const getItem = useCallback(() => {
+      return [number, number + 1, number + 2];
+    }, [number]);
+  
+    // Call getItem() to get the values
+    const items = getItem();
+  
+    return (
+      <>
+        <input
+          type="text"
+          value={number}
+          onChange={(e) => setNumber(Number(e.target.value))} // Fix: Convert input to number
+        />
+        <br />
+        {number !== 0 && (
+          <>
+            <h1>{items[0]}</h1>
+            <h2>{items[1]}</h2>
+            <h2>{items[2]}</h2>
+          </>
+        )}
+      </>
+    );
+  }
+
+  ```
+ **Important Check** if you use usememo in place of usecallback then difference is usememo not return the function only value of the function but usecallback return the function.
+| **Feature** | **useCallback** | **useMemo** |
+| -------------- | ----------------------| --------------- |
+| What it returns	| Returns a memoized function	 | Returns a memoized value |
+| When to use? | 	When you want to memoize a function and avoid unnecessary re-creation on re-renders. | 	When you want to memoize the result of a computation and avoid unnecessary recalculations.|
+| Use case	| Optimizing functions passed as props to child components. | 	Optimizing expensive calculations. |
+| Return type |	Function |	Computed Value |
 
 ## useLayoutEffect: (Runs Before Paint)
 - Similar to useEffect but runs synchronously after DOM mutations.
