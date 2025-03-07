@@ -21,6 +21,8 @@
 | -17 | Strict Mode in React. |
 
 
+**Handle submit = e.preventDefault();**
+
 ## Setup and Installation of app Vite+React
 
 ```
@@ -180,6 +182,8 @@ const handleDelete = (index) => {
 ```
 ## useContext (Global State Management)
 - Allows sharing data across components without props drilling.
+- useContext return the contet value for the context you passed.
+- The context API uses a provider to pass data to its child component. You will have to wrap all component with a provider component.
 ```
 import { createContext, useContext } from "react";
 const ThemeContext = createContext("light");
@@ -199,7 +203,11 @@ export default function App() {
 ## useRef: (Accessing DOM & Persisting Values)
 - Used for accessing DOM elements and persisting values without causing re-renders.
 - Big usecases - used to refrence element inside the html.
-- useRef can store previous values of a state without triggering re-renders. 
+- useRef Hook allow you to persist value b/w render.
+- It can be access DOM element directly.
+- useRef() can return only one item, It return an object called current.
+- The useRef hook can also be used to keep track of previous state value.
+  
 ```
 import { useState, useEffect, useRef } from "react";
 import "./styles.css";
@@ -229,29 +237,51 @@ export default function App() {
 ```
 ## useReducer: (For Complex State Logic)
 - An alternative to useState for complex state logic.
+- useReducer is a React Hook that manages complex state logic in a React component. It is an alternative to useState when dealing with multiple related state values or complex state transitions.
+- Syntax ``` const [state, dispatch] = useReducer(reducer, initialState); ```
+  - reducer: A function that takes the current state and an action, then returns the new state.
+  - initialState: The initial value of the state.
+  - state: The current state value.
+  - dispatch: A function to send actions to update the state.
+  
 ```
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
+import "./styles.css";
 
-const reducer = (state, action) => {
+// outside function
+function reducer(todos, action) {
   switch (action.type) {
-    case "increment":
-      return { count: state.count + 1 };
-    case "decrement":
-      return { count: state.count - 1 };
+    case "add_todo":
+      return [...todos, newTodo(action.payload.name)];
     default:
       return state;
   }
-};
+}
 
-function Counter() {
-  const [state, dispatch] = useReducer(reducer, { count: 0 });
+function newTodo(name) {
+  return { _id: new Date(), name: name, complete: false };
+}
+
+export default function App() {
+  const [todos, dispatch] = useReducer(reducer, []);
+  const [name, setName] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    dispatch({ type: "add_todo", payload: { name: name } });
+    setName("");
+  }
 
   return (
-    <div>
-      <p>Count: {state.count}</p>
-      <button onClick={() => dispatch({ type: "increment" })}>+</button>
-      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
-    </div>
+    <>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </form>
+    </>
   );
 }
 ```
@@ -273,6 +303,9 @@ function Counter() {
 ```
 ## useMemo: (Performance Optimization)
 - Optimizes performance by memoizing computed values.
+- memoization as caching a value so that it don't need to be recalculate.
+- the useMemo Hooks only run when one of its dependies update.
+- Syntax : ``` useMemo(calculatedValue, dependencies); ```
 ```
 import React, { useState, useMemo } from "react";
 
@@ -299,6 +332,7 @@ const MemoExample = () => {
 ```
 ## useCallback: (Optimizing Function References)
 - Memoizes functions to prevent unnecessary re-renders.
+- 
 
 ## useLayoutEffect: (Runs Before Paint)
 - Similar to useEffect but runs synchronously after DOM mutations.
