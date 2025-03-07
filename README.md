@@ -18,7 +18,7 @@
 | -14 | React Router|
 | -15 | Redux |
 | -16 | Error Boundries |
-| 17 | |
+| -17 | Strict Mode in React. |
 
 
 ## Setup and Installation of app Vite+React
@@ -418,7 +418,7 @@ React provides two ways to create components:
 - Using React.PureComponent: It is a base component class that checks the state and props of a component to know whether the component should be updated.
 - Lazy Loading :  It is a technique used to reduce the load time of a React app. Lazy loading helps reduce the risk of web app performances to a minimum.
 
-
+## Explain Strict Mode in React.
 
 
 
