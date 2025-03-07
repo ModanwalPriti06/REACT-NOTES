@@ -19,8 +19,12 @@
 | -15 | Redux |
 | -16 | Error Boundries |
 | -17 | Strict Mode in React. |
+```
 
-**Handle submit = e.preventDefault();**
+Handle submit = e.preventDefault();
+onClick((e)= setName(e.target.name); // e is SyntheticBaseEvent.
+```
+
 
 ## Setup and Installation of app Vite+React
 
