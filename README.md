@@ -18,11 +18,11 @@
 | -14 | React Router|
 | -15 | Redux |
 | -16 | Error Boundries |
-| -17 | Strict Mode in React. |
+| 17 | Strict Mode in React. |
 | -18 | Lifting State |
 | -19 | React Fragmentation |
-```
 
+```
 Handle submit = e.preventDefault();
 onClick((e)= setName(e.target.name); // e is SyntheticBaseEvent.
 ```
@@ -499,6 +499,26 @@ React provides two ways to create components:
 - Lazy Loading :  It is a technique used to reduce the load time of a React app. Lazy loading helps reduce the risk of web app performances to a minimum.
 
 ## Explain Strict Mode in React.
+- React's Strict Mode is a development-only feature that helps identify potential problems in your application. It does not affect the production build and only runs in development mode.
+#### It helps with:
+- Identifying unsafe lifecycle methods in class components.
+- Detecting side effects by intentionally double-invoking certain functions.
+- Highlighting potential issues with deprecated APIs.
+- Ensuring components are following best practices.
+- Preventing accidental mutations of state.
+  
+#### Enable Strict Mode
+```
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+```
 
 ## What is propTypes in React?
 - propTypes is a mechanism in React used for type-checking the props passed to a component. It helps catch bugs by ensuring that the correct data types are used.
