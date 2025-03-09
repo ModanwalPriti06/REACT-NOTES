@@ -500,6 +500,32 @@ React provides two ways to create components:
 
 ## Explain Strict Mode in React.
 
+## What is propTypes in React?
+- propTypes is a mechanism in React used for type-checking the props passed to a component. It helps catch bugs by ensuring that the correct data types are used.
+```
+import PropTypes from "prop-types";
+const Greeting = ({ name, age }) => {
+  return (
+    <div>
+      <h1>Hello, {name}!</h1>
+      <p>You are {age} years old.</p>
+    </div>
+  );
+};
+
+// Define prop types
+Greeting.propTypes = {
+  name: PropTypes.string.isRequired, // name must be a string and required
+  age: PropTypes.number, // age must be a number (optional)
+};
+export default Greeting;
+```
+Note: npm i props-type
+Example Type: PropTypes.string, PropTypes.number, PropTypes.bool, PropTypes.object, PropTypes.array, PropTypes.func, PropTypes.element, PropTypes.shape({ key: PropTypes.string }).
+
+
+
+
 
 
 
