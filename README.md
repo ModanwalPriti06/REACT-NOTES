@@ -576,7 +576,22 @@ export default function App() {
   );
 }
 ```
-
+## What is React Fragmentation? 
+- React Fragment (<React.Fragment> or <>...</>)
+- React Fragmentation refers to the use of React Fragments, which allow you to group multiple elements without adding extra nodes to the DOM.
+  
+### Why Use React Fragments?
+- By default, React requires components to return a single parent element. If you return multiple elements without wrapping them, it will cause an error.
+```
+const List = () => {
+  return (
+    <>
+      <li>Apple</li>
+      <li>Banana</li>
+    </>
+  );
+};
+```
 
 
 
