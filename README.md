@@ -14,7 +14,7 @@
 | 10 | virtual DOM |
 | 11 | Reconciliation|
 | 12 | Statefull and Stateless component |
-| -13 | Life Cycle Method |
+| 13 | Life Cycle Method |
 | -14 | React Router|
 | -15 | Redux |
 | -16 | Error Boundries |
@@ -610,7 +610,7 @@ const List = () => {
 - ✅ Used for UI rendering only.
 
 ## LifeCycle  Method
-- A component's lifecycle has three main phases: Mounting Phase, Updating Phase, and Unmounting Phase.
+- A component's lifecycle has three main phases: Mounting Phase, Updating Phase, and Unmounting Phase and Error Handling Phase.
 - The Mounting Phase begins when a component is first created and inserted into the DOM. The Updating Phase occurs when a component's state or props change. And the Unmounting Phase occurs when a component is removed from the DOM.
 
 ### Mounting Phase:
