@@ -13,14 +13,14 @@
 | 9 | props drilling |
 | 10 | virtual DOM |
 | 11 | Reconciliation|
-| -12 | Life Cycle Method |
-| -13 | Statefull and Stateless component |
+| 12 | Statefull and Stateless component |
+| -13 | Life Cycle Method |
 | -14 | React Router|
 | -15 | Redux |
 | -16 | Error Boundries |
 | 17 | Strict Mode in React. |
 | 18 | Lifting State |
-| -19 | React Fragmentation |
+| 19 | React Fragmentation |
 
 ```
 Handle submit = e.preventDefault();
@@ -592,6 +592,29 @@ const List = () => {
   );
 };
 ```
+## Stateful vs Stateless Components in React 🚀
+- In React, components can be categorized into Stateful (Class-based) and Stateless (Functional) Components, based on whether they manage their own state.
+- Stateful: A Stateful Component is a component that manages state using this.state. These components track changes and re-render when the state is updated.
+- Stateless: A Stateless Component is a simple function that only renders UI and does not manage state.
+
+### Key Features of Stateful Components:
+- ✅ Uses Class Components.
+- ✅ Stores and manages state (this.state).
+- ✅ Requires a constructor and this.setState to update state.
+- ✅ More complex but powerful (before Hooks were introduced).
+
+### Key Features of Stateless Components:
+- ✅ Uses Functional Components.
+- ✅ No state management (before React Hooks).
+- ✅ Simpler and easier to read.
+- ✅ Used for UI rendering only.
+
+
+
+
+
+
+
 
 
 
