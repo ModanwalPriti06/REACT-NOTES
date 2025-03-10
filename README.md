@@ -17,7 +17,7 @@
 | 13 | Life Cycle Method |
 | -14 | React Router|
 | -15 | Redux |
-| -16 | Error Boundries |
+| 16 | Error Boundries |
 | 17 | Strict Mode in React. |
 | 18 | Lifting State |
 | 19 | React Fragmentation |
@@ -644,7 +644,11 @@ const List = () => {
 | static getDerivedStateFromError() | Catches errors and updates state accordingly. | 
 | componentDidCatch()	| Logs the error or displays a fallback UI.|
 
+## Error Boundaries
+- Functional Components & Error Boundaries: You cannot create an Error Boundary using Hooks. It must be a class component. But you can use them to wrap functional components.
+- Wrap in try and catch or console.error('error message')
 
+# Router
 
 
 
