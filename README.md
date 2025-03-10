@@ -609,7 +609,40 @@ const List = () => {
 - ✅ Simpler and easier to read.
 - ✅ Used for UI rendering only.
 
+## LifeCycle  Method
+- A component's lifecycle has three main phases: Mounting Phase, Updating Phase, and Unmounting Phase.
+- The Mounting Phase begins when a component is first created and inserted into the DOM. The Updating Phase occurs when a component's state or props change. And the Unmounting Phase occurs when a component is removed from the DOM.
 
+### Mounting Phase:
+- In this Phase three method is - constructor(), render() and getDerivedStateFromProps(props,state).
+- ComponentDidMount: This method is called once the component has been mounted into the DOM. It is typically used to set up any necessary event listeners or timers, perform any necessary API calls or data fetching, and perform other initialization tasks that require access to the browser's DOM API.
+  
+| **Method** | **Description** | 
+| -------------- | ----------------------| 
+| constructor()	| Initializes state and binds methods. |
+| static |  getDerivedStateFromProps()	Syncs state with props before rendering. Rarely used.|
+| render() | 	Returns JSX to render the UI.|
+| componentDidMount()	| Called after the component is mounted. Ideal for API calls or subscriptions.|
+
+### Updating Phase
+| **Method** | **Description** | 
+| -------------- | ----------------------| 
+| static | getDerivedStateFromProps()	Same as in Mounting phase; used when state depends on props. | 
+| shouldComponentUpdate() |	Determines if a component should re-render. | 
+| render() |	Re-renders the UI. | 
+| getSnapshotBeforeUpdate() | 	Captures DOM information before update. |
+| componentDidUpdate() |	Called after the component updates. Ideal for handling side-effects. |
+
+### Unmounting Phase
+| **Method** | **Description** | 
+| -------------- | ----------------------| 
+| componentWillUnmount() | 	Called before the component is destroyed. Ideal for cleanup (e.g., clearing timers, cancelling network requests, etc.). | 
+
+### Error Handling Phase
+| **Method** | **Description** | 
+| -------------- | ----------------------| 
+| static getDerivedStateFromError() | Catches errors and updates state accordingly. | 
+| componentDidCatch()	| Logs the error or displays a fallback UI.|
 
 
 
