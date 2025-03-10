@@ -19,7 +19,7 @@
 | -15 | Redux |
 | -16 | Error Boundries |
 | 17 | Strict Mode in React. |
-| -18 | Lifting State |
+| 18 | Lifting State |
 | -19 | React Fragmentation |
 
 ```
@@ -543,8 +543,39 @@ export default Greeting;
 Note: npm i props-type
 Example Type: PropTypes.string, PropTypes.number, PropTypes.bool, PropTypes.object, PropTypes.array, PropTypes.func, PropTypes.element, PropTypes.shape({ key: PropTypes.string }).
 
+## Lifting State Up in React 🚀
+- Lifting State Up is a React pattern where state is moved from a child component to a common parent component to ensure better state management and data flow.
+- Why Lift State Up?
+ -To share data between sibling components.
+ -To maintain a single source of truth for state.
+ -To prevent unnecessary re-renders in child components.
 
+```
+import { useState } from "react";
+const ChildA = ({ count, onIncrement }) => {
+  return (
+    <div>
+      <h2>Child A Count: {count}</h2>
+      <button onClick={onIncrement}>Increment</button>
+    </div>
+  );
+};
 
+const ChildB = ({ count }) => {
+  return <h2>Child B can now see Count: {count}</h2>;
+};
+
+export default function App() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <ChildA count={count} onIncrement={() => setCount(count + 1)} />
+      <ChildB count={count} />
+    </div>
+  );
+}
+```
 
 
 
