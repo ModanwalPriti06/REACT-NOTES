@@ -5,7 +5,7 @@
 | 2 | Interview Question | 
 | 3 | Hooks - useState, useEffect, useMemo, useContext, useRef, useReducer, useCallback, uselayoutEffect, useImperativeHandle  | 
 | 3.1 | Custom Hook | 
-| 3.2 | userId Hook| 
+| 3.2 | userId . userParams Hook| 
 | 4 | state and props | 
 | 5 | What is JSX|
 | 6 | Difference Between Class Component and Functional Component in React 🚀 |
@@ -681,14 +681,162 @@ const List = () => {
 - Wrap in try and catch or console.error('error message')
 
 # React Router 
+- npm i react-router-dom
+```
+BrowserRouter
+HashRouter
+unstable_HistoryRouter
+MemoryRouter
+StatisRouter
+```
+**Basic:** React Router is a popular library for handling navigation in React applications. It enables single-page applications (SPA) to have multiple views without requiring a full page reload.
+### Why Use React Router?
+- ✅ Enables client-side routing
+- ✅ Improves performance by avoiding full-page reloads
+- ✅ Allows dynamic URL parameters (e.g., /users/:id)
+- ✅ Supports nested routes
+- ✅ Provides navigation controls (e.g., useNavigate, Link)
+```
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+function Home() {
+  return <h1>Home Page</h1>;
+}
 
+function About() {
+  return <h1>About Page</h1>;
+}
 
+export default function App() {
+  return (
+    <Router>
+      <nav>
+        <Link to="/">Home</Link> | <Link to="/about">About</Link>
+      </nav>
 
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
+  );
+}
+```
+### Dynamic Routing (URL Parameters)
+- You can pass dynamic parameters using :id in the route path.
 
+### useNavigate() for Programmatic Navigation
+- Instead of <Link>, you can navigate programmatically using useNavigate().
+```
+import { useNavigate } from "react-router-dom";
 
+function Home() {
+  const navigate = useNavigate();
+  
+  return (
+    <div>
+      <h1>Home Page</h1>
+      <button onClick={() => navigate("/about")}>Go to About</button>
+    </div>
+  );
+}
+```
 
+## Note: You can protect your route only cause of authentication 
+## Note: If path does not exist give path = '*' element= {NotFoundPageComponent}
 
+### What is Outlet in React Router?
+- Outlet is a component in React Router that enables nested routing. It acts as a placeholder where child routes render their components inside the parent component.
+- suppose one page is there you want to click page and not goto different page same page and one place render that component then enter outlet. Read Below: 
+```
+import { BrowserRouter as Router, Routes, Route, Link, Outlet } from "react-router-dom";
 
+function Dashboard() {
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      <nav>
+        <Link to="profile">Profile</Link> | <Link to="settings">Settings</Link>
+      </nav>
+      <Outlet /> {/* Child Routes will be rendered here */}
+    </div>
+  );
+}
+
+function Profile() {
+  return <h2>Profile Page</h2>;
+}
+
+function Settings() {
+  return <h2>Settings Page</h2>;
+}
+
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="dashboard" element={<Dashboard />}>
+          <Route path="profile" element={<Profile />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
+      </Routes>
+    </Router>
+  );
+}
+```
+# useRoutes Hook in React Router
+- useRoutes is a hook in React Router (v6+) that allows defining routes as a JavaScript object instead of using <Routes> and <Route> components.
+  
+### How useRoutes Works
+- Define an array of route objects with path and element.
+- Pass it to useRoutes inside a separate AppRoutes component.
+- useRoutes automatically matches the path and renders the correct component.
+
+### Nested Routing
+```
+const Dashboard = () => <h1>Dashboard</h1>;
+const Profile = () => <h1>Profile</h1>;
+const Settings = () => <h1>Settings</h1>;
+
+const AppRoutes = () => {
+  const routes = useRoutes([
+    {
+      path: "dashboard",
+      element: <Dashboard />,
+      children: [
+        { path: "profile", element: <Profile /> },
+        { path: "settings", element: <Settings /> },
+      ],
+    },
+  ]);
+
+  return routes;
+};
+```
+### When to Use useRoutes?
+- ✅ For large applications with many routes
+- ✅ For dynamic route generation (e.g., routes from an API)
+- ✅ When you want a cleaner and more structured approach
+
+## Link props
+- replace - The replace prop in the <Link> component of React Router is used to replace the current history entry instead of adding a new one.
+- reloadDocument - relaod all page
+```
+   <Link to="/about" replace reloadDocument>Go to About (Replace)</Link>
+```
+
+## NavLink 
+- Works just like <Link>, but can automatically detect when a route is active.
+- Allows adding styles (style, className) based on active status.
+```
+  <NavLink 
+   to="/about"
+   className={({ isActive }) => (isActive ? "active-link" : "normal-link")}
+   style={({ isActive }) => ({ color: isActive ? "red" : "blue" })}
+
+>
+  About
+</NavLink>
+ ```
 
 
 
