@@ -5,6 +5,7 @@
 | 2 | Interview Question | 
 | 3 | Hooks - useState, useEffect, useMemo, useContext, useRef, useReducer, useCallback, uselayoutEffect, useImperativeHandle  | 
 | 3.1 | Custom Hook | 
+| 3.2 | userId Hook| 
 | 4 | state and props | 
 | 5 | What is JSX|
 | 6 | Difference Between Class Component and Functional Component in React 🚀 |
@@ -382,9 +383,41 @@ const MemoExample = () => {
 
 ## useLayoutEffect: (Runs Before Paint)
 - Similar to useEffect but runs synchronously after DOM mutations.
+- useLayoutEffect is synchronous
+- useLayoutEffect run between when react calculate the count and printed out the screen.
+- When we are do something based on Layout of your DOM.
 
 ## useImperativeHandle: (Customizing ref Exposed Values)
 - Customizes the instance value exposed when using ref.
+
+## What is useId in React?
+- useId is a React Hook introduced in React 18 that generates a unique ID. It is mainly used to associate form labels and elements while avoiding conflicts between multiple components.
+- useId() generates a unique ID like "id-:r0:" or "id-xyz", ensuring that the label and input are correctly linked.
+```
+import { useId } from "react";
+function CustomCheckbox() {
+  const id = useId();
+
+  return (
+    <div>
+      <input type="checkbox" id={id} />
+      <label htmlFor={id}>Accept Terms</label>
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <div>
+      <CustomCheckbox />
+      <CustomCheckbox />
+    </div>
+  );
+}
+```
+####  Why Use useId?
+- Avoid ID Collisions: If multiple instances of a component exist, using a hardcoded ID can cause conflicts.
+- Server-Side Rendering (SSR) Safe: Ensures that IDs remain consistent between the server and client.
 
 ## What are Custom Hooks?
 - A Custom Hook in React is a JavaScript function that starts with "use" and allows you to reuse logic across multiple components.
@@ -433,7 +466,6 @@ const MemoExample = () => {
   };
   export default UserList;
   ```
-
 
 ## State and Props
 **State** 
@@ -648,7 +680,7 @@ const List = () => {
 - Functional Components & Error Boundaries: You cannot create an Error Boundary using Hooks. It must be a class component. But you can use them to wrap functional components.
 - Wrap in try and catch or console.error('error message')
 
-# Router
+# React Router 
 
 
 
