@@ -16,7 +16,7 @@
 | 11 | Reconciliation|
 | 12 | Statefull and Stateless component |
 | 13 | Life Cycle Method |
-| -14 | React Router|
+| 14 | React Router|
 | -15 | Redux |
 | 16 | Error Boundries |
 | 17 | Strict Mode in React. |
