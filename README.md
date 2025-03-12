@@ -837,8 +837,38 @@ const AppRoutes = () => {
   About
 </NavLink>
  ```
+## Navigate Component
+- The Navigate component in React Router is used to programmatically redirect users to another route.
+- Why Use? Redirect users after a certain condition (e.g., authentication).
+```
+const isLoggedIn = false;
+export default function Dashboard() {
+  return isLoggedIn ? <h1>Welcome to Dashboard</h1> : <Navigate to="/login" />;
+}
+```
 
+## useSearchParams Hooks
+- The useSearchParams hook is used to read and modify query parameters in the URL in React Router.
+```
+import { useSearchParams } from "react-router-dom";
 
+const Products = () => {
+  const [searchParams] = useSearchParams();
+
+  const category = searchParams.get("category"); // "shoes"
+  const price = searchParams.get("price");       // "low"
+
+  return (
+    <div>
+      <h1>Products</h1>
+      <p>Category: {category}</p>
+      <p>Price: {price}</p>
+    </div>
+  );
+};
+
+export default Products;
+```
 
 
 
