@@ -882,6 +882,7 @@ export default Products;
 
 # Redux
 - Redux is state management library for javascript application. It helps manage and centralize application state, making it easier to track changes and debug complex applications.
+- check image for redux 
 
 ## Key Concepts of Redux
 ### Store 📦
@@ -910,13 +911,27 @@ export default Products;
 - Static data website
 - Small or medium size of applications
 
+
 ```
 Webpack - Bundler for bundle javascript code in one file and then link to the browser.
 Open terminal - ctrl+ ` or commond+`
 lodash.com = use for work in array object etc. pipe() function etc.
 ```
-
-
+## Subscribe and unsubscribe method
+- As we use Subscribe feature on YouTube, store.subscribe method is also used to get notified when we have something change in our store object.
+```
+store.subscribe(() => {
+    console.log("Updated", store.getState());
+});
+```
+- This callback function will run on every change on the redux store.
+- Now if we want to stop this subscribe method we have to use unsubscribe.
+```
+const unsubscribe = store.subscribe(() => {
+    console.log("Updated", store.getState());
+});
+unsubscribe();
+```
 
 
 
