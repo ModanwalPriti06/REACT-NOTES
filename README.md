@@ -870,7 +870,56 @@ const Products = () => {
 export default Products;
 ```
 
+## What is Profiler
+- The Profiler in React DevTools helps you measure how your React components render and re-render, showing performance insights to optimize your app.
+#### 🔍 What Does Profiler Do?
+- Tracks Rendering Performance → Measures how long it takes each component to render.
+- Identifies Unnecessary Renders → Helps find components that re-render too often.
+- Detects Performance Bottlenecks → Shows which components take the longest to render.
+- Shows React Commit Phases → Displays time spent in reconciliation and updates.
+
+---
+
 # Redux
+- Redux is state management library for javascript application. It helps manage and centralize application state, making it easier to track changes and debug complex applications.
+
+## Key Concepts of Redux
+### Store 📦
+- A single source of truth that holds the application state.
+### Actions 🎬
+- Plain JavaScript objects that describe what should happen (e.g., increment a counter, update user data).
+### Reducers 🔄
+- Pure functions that take the current state and an action, then return a new state.
+### Dispatch 🚀
+- The function used to send an action to the Redux store.
+### Selectors 🔍
+- Functions used to extract specific pieces of state from the store.
+  
+## Why Use Redux?
+- Centralized state management
+- Easier debugging with tools like Redux DevTools
+- Predictable state updates
+- Works well with large applications
+- Preserve the page state
+
+## Cons of Redux
+- Very complex
+- Write a lot of bioler plate code
+
+## When didn’t we use Redux?
+- Static data website
+- Small or medium size of applications
+
+```
+Webpack - Bundler for bundle javascript code in one file and then link to the browser.
+Open terminal - ctrl+ ` or commond+`
+lodash.com = use for work in array object etc. pipe() function etc.
+```
+
+
+
+
+
 
 
 
