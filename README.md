@@ -902,6 +902,7 @@ export default Products;
 - Predictable state updates
 - Works well with large applications
 - Preserve the page state
+- https://zustand-demo.pmnd.rs/  - Zustand is a lightweight, fast, and scalable state management library for React.
 
 ## Cons of Redux
 - Very complex
