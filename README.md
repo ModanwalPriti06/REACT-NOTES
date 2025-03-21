@@ -24,7 +24,7 @@
 | 19 | React Fragmentation |
 | 20 | How do you handle forms and form validation in React? |
 | 21| What are Redux middleware (Thunk, Saga)? How do they work? |
-| -22 | How do you optimize performance in React applications |
+| 22 | How do you optimize performance in React applications |
 | -23 | How does server-side rendering (SSR) work in React?|
 | -24 | CSR ( Client-side rendering)|
 | -25 |How do you implement infinite scrolling in React?|
@@ -1000,4 +1000,10 @@ export default FormWithRef;
 4. Optimize List Rendering - Use key Properly in Lists
 5. Optimize React State Management - Use Local State Where Necessary
 6. Optimize CSS & Rendering
+
+# Implementing Infinite Scrolling in React
+- Using IntersectionObserver (Most use cases)
+- Using onScroll Event (Alternative)
+- Using React Libraries (For Production)
+
 
