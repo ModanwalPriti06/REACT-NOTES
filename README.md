@@ -22,8 +22,8 @@
 | 17 | Strict Mode in React. |
 | 18 | Lifting State |
 | 19 | React Fragmentation |
-| -20 | How do you handle forms and form validation in React? |
-| -21| What are Redux middleware (Thunk, Saga)? How do they work? |
+| 20 | How do you handle forms and form validation in React? |
+| 21| What are Redux middleware (Thunk, Saga)? How do they work? |
 | -22 | How do you optimize performance in React applications |
 | -23 | How does server-side rendering (SSR) work in React?|
 | -24 | CSR ( Client-side rendering)|
@@ -982,7 +982,22 @@ export default FormWithRef;
 ```
 4. Controlled Component - where hanle form input field - input, textarea, select.
 
+# What is Redux Middleware? - Redux Thunk (Simpler) / Redux Saga (More Advanced)
+- Redux middleware is a function that runs between dispatching an action and reaching the reducer.
+1. ✅ Asynchronous operations (API calls, database queries).
+2. ✅ Logging, error handling, and authentication before updating the state.
+3. ✅ Side effects handling (e.g., analytics, caching).
 
+### Redux Saga (More Advanced)
+- Uses generators (function*) to pause (yield) and resume execution.
+- Works independently of components (doesn’t need dispatch).
+- Better for long-running processes, background sync, and WebSockets.
 
+# How to Optimize Performance in React Applications
+1. Avoid Unnecessary Re-Renders (React.Memo)
+2. Use useMemo() to Cache Expensive Calculations
+3. Prevent Unnecessary Function Re-Creation - Use useCallback() for Stable Function References.
+4. Optimize List Rendering - Use key Properly in Lists
+5. Optimize React State Management - Use Local State Where Necessary
+6. Optimize CSS & Rendering
 
- 
