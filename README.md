@@ -17,11 +17,17 @@
 | 12 | Statefull and Stateless component |
 | 13 | Life Cycle Method |
 | 14 | React Router|
-| -15 | Redux |
+| 15 | Redux |
 | 16 | Error Boundries |
 | 17 | Strict Mode in React. |
 | 18 | Lifting State |
 | 19 | React Fragmentation |
+| -20 | How do you handle forms and form validation in React? |
+| -21| What are Redux middleware (Thunk, Saga)? How do they work? |
+| -22 | How do you optimize performance in React applications |
+| -23 | How does server-side rendering (SSR) work in React?|
+| -24 | CSR ( Client-side rendering)|
+| -25 |How do you implement infinite scrolling in React?|
 
 ```
 Handle submit = e.preventDefault();
@@ -934,10 +940,47 @@ const unsubscribe = store.subscribe(() => {
 unsubscribe();
 ```
 
+# How do you handle forms and form validation in React? 
+- Handling forms in React involves managing user input, handling form submission, and validating data before processing it. There are multiple ways to handle forms and validation efficiently.
+1.  Handling Forms with useState (Basic Approach)
+2.  Handling Validation Manually
+```
+const handleSubmit = (e) => {
+  e.preventDefault();
+  if (!formData.name.trim()) {
+    alert("Name is required!");
+    return;
+  }
+  if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    alert("Enter a valid email!");
+    return;
+  }
+};
+```
+3. Using useRef for Uncontrolled Form
+ ```
+import { useRef } from "react";
+const FormWithRef = () => {
+  const nameRef = useRef();
+  const emailRef = useRef();
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Name:", nameRef.current.value);
+    console.log("Email:", emailRef.current.value);
+  };
 
-
-
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" ref={nameRef} placeholder="Name" />
+      <input type="email" ref={emailRef} placeholder="Email" />
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+export default FormWithRef;
+```
+4. Controlled Component - where hanle form input field - input, textarea, select.
 
 
 
