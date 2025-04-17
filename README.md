@@ -344,40 +344,31 @@ const MemoExample = () => {
 ```
 ## useCallback: (Optimizing Function References)
 - Memoizes functions to prevent unnecessary re-renders.
-  ```
-  import { useState, useCallback } from "react";
-  import "./styles.css";
+```
+  // App.js
+  import React, { useState, useCallback } from 'react';
+  import Button from './Button';
   
-  export default function App() {
-    const [number, setNumber] = useState(0);
+  const App = () => {
+    const [count, setCount] = useState(0);
+    const [otherCount, setOtherCount] = useState(0);
   
-    // Memoized function to return array of numbers this will be render not again and again only when number update it will be update number value.
-    const getItem = useCallback(() => {
-      return [number, number + 1, number + 2];
-    }, [number]);
-  
-    // Call getItem() to get the values
-    const items = getItem();
+    // Without useCallback, this function would be recreated on every render
+    const increment = useCallback(() => {
+      setCount((prev) => prev + 1);
+    }, []);
   
     return (
-      <>
-        <input
-          type="text"
-          value={number}
-          onChange={(e) => setNumber(Number(e.target.value))} // Fix: Convert input to number
-        />
-        <br />
-        {number !== 0 && (
-          <>
-            <h1>{items[0]}</h1>
-            <h2>{items[1]}</h2>
-            <h2>{items[2]}</h2>
-          </>
-        )}
-      </>
+      <div>
+        <h1>Count: {count}</h1>
+        <h2>Other Count: {otherCount}</h2>
+        <Button onClick={increment} />
+        <button onClick={() => setOtherCount(otherCount + 1)}>Change Other Count</button>
+      </div>
     );
-  }
-
+  };
+  
+  export default App;
   ```
  **Important Check** if you use usememo in place of usecallback then difference is usememo not return the function only value of the function but usecallback return the function.
 | **Feature** | **useCallback** | **useMemo** |
