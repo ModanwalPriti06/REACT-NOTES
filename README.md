@@ -212,6 +212,48 @@ export default function App() {
   );
 }
 ```
+App.js
+```
+import { useState, createContext } from "react";
+import Home from "./Home";
+
+export const MyContext = createContext(); // <-- export it like this
+
+export default function App() {
+  const [name, setName] = useState("");
+
+  return (
+    <div className="App">
+      <h1>Hello {name}</h1>
+      <input
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Enter your name"
+      />
+
+      <MyContext.Provider value={name}>
+        <Home />
+      </MyContext.Provider>
+    </div>
+  );
+}
+```
+Home.js
+```
+import { useContext, useState } from "react";
+import { MyContext } from "./App";
+
+export default function Home() {
+  const data = useContext(MyContext);
+  const [name, setName] = useState();
+
+  return (
+    <div className="App">
+      <h1>Hello {data}</h1>
+    </div>
+  );
+}
+```
+
 ## useRef: (Accessing DOM & Persisting Values)
 - Used for accessing DOM elements and persisting values without causing re-renders.
 - Big usecases - used to refrence element inside the html.
