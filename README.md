@@ -335,6 +335,9 @@ export default function App() {
           onChange={(e) => setName(e.target.value)}
         />
       </form>
+   {todos?.map((item, idx) => (
+           <h3>{item.name}</h3>
+         ))}
     </>
   );
 }
