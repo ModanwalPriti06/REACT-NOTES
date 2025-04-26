@@ -432,6 +432,31 @@ export default App;
 - useLayoutEffect is synchronous
 - useLayoutEffect run between when react calculate the count and printed out the screen.
 - When we are do something based on Layout of your DOM.
+```
+import React, { useState, useRef, useLayoutEffect } from "react";
+
+export default function App() {
+  const [width, setWidth] = useState(0);
+  const boxRef = useRef();
+
+  useLayoutEffect(() => {
+    const boxWidth = boxRef.current.getBoundingClientRect().width;
+    setWidth(boxWidth);
+  }, []);
+
+  return (
+    <div className="App">
+      <div
+        ref={boxRef}
+        style={{ width: "300px", height: "100px", backgroundColor: "lightblue" }}
+      >
+        I'm a box
+      </div>
+      <p>Box width: {width}px</p>
+    </div>
+  );
+}
+```
 
 ## useImperativeHandle: (Customizing ref Exposed Values)
 - Customizes the instance value exposed when using ref.
