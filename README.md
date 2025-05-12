@@ -149,6 +149,7 @@ const handleDelete = (index) => {
 --- 
 # React Notes Start
 ## What is React?
+- React is an open-source front-end JavaScript library created by Facebook that is used for building user interfaces(UI) based on components. There are various features that are provided by React.
 - React is a JavaScript library for building user interfaces. It is component-based, meaning that UI elements are broken down into reusable components. React follows a declarative approach, allowing developers to efficiently update and render the UI based on state changes.
 - React is unidirection data flow ( means jo top level component hota hai uske down level component ko data transfer kr skte hai).
 
