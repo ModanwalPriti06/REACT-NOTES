@@ -552,7 +552,10 @@ export default function App() {
 
 ## What is JSX?
 - JSX stands for JavaScript XML. It allows us to write HTML inside JavaScript and place them in the DOM without using functions like appendChild( ) or createElement( ).
-  
+
+## How do browsers read JSX in React?
+- Browsers are not capable of reading JSX they can only read pure JavaScript. The web browsers read JSX with the help of a transpiler. Transpilers are used to convert JSX into JavaScript. The transpiler used is called Babel.
+
 ## What is component?
 - Component are independent and reusable bits of code.
 - Component are function that return HTML element JSX.
