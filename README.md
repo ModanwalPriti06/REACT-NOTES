@@ -539,6 +539,39 @@ export default function App() {
   export default UserList;
   ```
 
+### Simplae example of Custom Hook Example
+//useCounter.js
+```
+import { useState } from "react";
+
+function useCounter(initialValue = 0) {
+  const [count, setCount] = useState(initialValue);
+
+  const increment = () => setCount((prev) => prev + 1);
+  const decrement = () => setCount((prev) => prev - 1);
+
+  return { count, increment, decrement };
+}
+
+export default useCounter;
+```
+//APp.js
+```
+import useCounter from "./useCounter";
+
+export default function App() {
+  const { count, increment, decrement } = useCounter(5); // Start from 5
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={increment}>➕ Increment</button>
+      <button onClick={decrement}>➖ Decrement</button>
+    </div>
+  );
+}
+```
+
 ## State and Props
 **State** 
 - Stateis a mutable (changeable) object that stores data inside a component.
